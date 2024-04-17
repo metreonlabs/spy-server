@@ -4,7 +4,6 @@ import express from "express";
 import mongoose from "mongoose";
 import DbConfig from "./configs/db.config";
 import Index from "./events";
-import { Controller } from "./controllers";
 
 const app = express();
 
