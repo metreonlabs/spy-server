@@ -1,0 +1,35 @@
+{
+  "name": "spy-server",
+  "version": "1.0.0",
+  "description": "spy server",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "dev-test": "node dist/index.js",
+    "test": "test"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Arogundade Ibrahim",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.0",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cron": "^3.1.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.4",
+    "web3": "^1.10.2"
+  }
+}
