@@ -9,8 +9,8 @@ export interface Message {
     fee: string;
     feeToken: string;
     sequenceNumber: number;
-    fromChainId: 137 | 56 | 463;
-    toChainId: 137 | 56 | 463;
+    fromChainId: 137 | 56 | 463 | 80002 | 97 | 462;
+    toChainId: 137 | 56 | 463 | 80002 | 97 | 462;
     sender: string;
     receiver: string;
     tokens: Token[];
@@ -19,4 +19,5 @@ export interface Message {
     deliveredTimestamp?: number;
     failedTimestamp?: number;
     retriedTimestamp?: number;
+    network: string;
 }
