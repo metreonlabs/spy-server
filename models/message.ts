@@ -19,5 +19,5 @@ export interface Message {
     deliveredTimestamp?: number;
     failedTimestamp?: number;
     retriedTimestamp?: number;
-    network: string;
+    network?: string;
 }
