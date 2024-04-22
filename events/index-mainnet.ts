@@ -14,7 +14,7 @@ class IndexMainnet {
     constructor() { }
 
     listen() {
-        this.startListening(Config.Areon as 462);
+        this.startListening(Config.Areon as 463);
 
         fs.writeFileSync(`events/config${Config.Areon}.index.json`,
             `{

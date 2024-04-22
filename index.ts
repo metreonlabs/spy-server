@@ -4,6 +4,7 @@ import express from "express";
 import mongoose from "mongoose";
 import DbConfig from "./configs/db.config";
 import Index from "./events";
+import IndexMainnet from "./events/index-mainnet";
 
 const app = express();
 
@@ -21,13 +22,16 @@ app.use(express.urlencoded({ extended: true }));
 
 const route = new Route();
 const index = new Index();
+const indexMainnet = new IndexMainnet();
 
 mongoose.connect(DbConfig.url)
     .then(() => {
         console.log("Connected to the database!");
 
         route.init(app);
+
         index.listen();
+        indexMainnet.listen();
     })
     .catch((error: Error) => {
         console.log("Cannot connect to the database!", error);
