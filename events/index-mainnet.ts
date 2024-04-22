@@ -10,16 +10,16 @@ import { Token } from "../models/token";
 const controller = new Controller();
 const Metreon = require('../abis/Metreon.json');
 
-class Index {
+class IndexMainnet {
     constructor() { }
 
     listen() {
-        this.startListening(Config.AreonTestnet as 463);
+        this.startListening(Config.Areon as 462);
 
-        fs.writeFileSync(`events/config${Config.AreonTestnet}.index.json`,
+        fs.writeFileSync(`events/config${Config.Areon}.index.json`,
             `{
                     "fromBlocks": {
-                        "${Config.AreonTestnet}": null
+                        "${Config.Areon}": null
                     }
                 }`);
     }
@@ -66,8 +66,8 @@ class Index {
                                 fee: event.returnValues.fee,
                                 feeToken: event.returnValues.feeToken,
                                 sequenceNumber: event.returnValues.sequenceNumber,
-                                fromChainId: chainId as 137 | 56 | 463,
-                                toChainId: event.returnValues.toChainId as 137 | 56 | 463,
+                                fromChainId: chainId as 137 | 56 | 463 | 80002 | 97 | 462,
+                                toChainId: event.returnValues.toChainId as 137 | 56 | 463 | 80002 | 97 | 462,
                                 sender: event.returnValues.sender,
                                 receiver: event.returnValues.receiver,
                                 tokens: tokens,
@@ -101,4 +101,4 @@ class Index {
     }
 }
 
-export default Index;
+export default IndexMainnet;
